@@ -2,5 +2,7 @@
 # -*- coding: utf-8 -*-
 
 DEBUG = True
-HOST = 'http://192.168.1.123'
+APP = 'StoryBoard'
 PORT = 8888
+STATIC_HOST = 'http://192.168.1.123:8889'
+HOST = 'http://192.168.1.123'

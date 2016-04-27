@@ -1,0 +1,114 @@
+*{
+    font-family: "Helvetica Neue", "Helvetica", 'Roboto Condensed', 'Microsoft Yahei', "Arial", "Verdana", "sans-serif";
+    -webkit-font-smoothing: antialiased;
+    font-weight: 200;
+    border-radius: 4px;
+}
+
+body{
+    background-color: #fafafa;
+    padding: 18px;
+        animation: fadein 0.9s ease-out;
+   -moz-animation: fadein 0.9s ease-out; /* Firefox */
+-webkit-animation: fadein 0.9s ease-out;  /* Safari 和 Chrome */
+     -o-animation: fadein 0.9s ease-out;   /* Opera */
+}
+
+a{
+        transition: all 0.3s ease-out;
+   -moz-transition: all 0.3s ease-out;
+-webkit-transition: all 0.3s ease-out;
+     -o-transition: all 0.3s ease-out;   
+}
+
+a:hover{
+        transition: all 0.3s ease-out;
+   -moz-transition: all 0.3s ease-out;
+-webkit-transition: all 0.3s ease-out;
+     -o-transition: all 0.3s ease-out;   
+}
+
+.fn-t-align-c{
+    text-align: center
+}
+
+.fn-clear-f{
+    clear: both;
+}
+
+.box{
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    margin: 12px 0;
+}
+
+.box .head{
+    font-size: 16px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    border-radius: 0;
+    color: #333;
+}
+
+.box .list-view{
+    padding: 18px;
+}
+
+.box .list-view .item{
+    cursor: pointer;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: solid 1px #eee;
+    background-color: #fff;
+        transition: all 0.3s ease-out;
+   -moz-transition: all 0.3s ease-out;
+-webkit-transition: all 0.3s ease-out;
+     -o-transition: all 0.3s ease-out;   
+}
+
+.box .list-view .item:hover{
+    background-color: #eee;
+        transition: all 0.3s ease-out;
+   -moz-transition: all 0.3s ease-out;
+-webkit-transition: all 0.3s ease-out;
+     -o-transition: all 0.3s ease-out;   
+}
+
+/********* animation *******/
+@keyframes fadein {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein{ /* Firefox */ 
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein{ /* Safari 和 Chrome */ 
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein{ /* Opera */ 
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+/********* animation end *******/
+

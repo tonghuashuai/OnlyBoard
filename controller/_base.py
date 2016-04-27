@@ -6,6 +6,8 @@ import mako.lookup
 import mako.template
 import tornado.web
 
+from config import STATIC_HOST, APP
+
 
 class Base(tornado.web.RequestHandler):
     def initialize(self):
@@ -25,10 +27,21 @@ class Base(tornado.web.RequestHandler):
     def render(self, **kwargs):
         filename = "{0}.html".format(self._camel_to_underline(self.__class__.__name__))
         filename = "{0}{1}".format(filename[0].lower(), filename[1:])
+        if isinstance(kwargs, dict):
+            kwargs.update(load_js=self.load_js)
+            kwargs.update(load_css=self.load_css)
+            kwargs.update(APP=APP)
+
         self.finish(self.render_string(filename, **kwargs))
 
     def get_current_user(self):
         pass
+
+    def load_js(self, src):
+        return '{static_host}/js/{src}'.format(static_host=STATIC_HOST, src=src)
+
+    def load_css(self, src):
+        return '{static_host}/css/{src}'.format(static_host=STATIC_HOST, src=src)
 
     def _camel_to_underline(self, camel_format):
         ''' 驼峰命名格式转下划线命名格式
