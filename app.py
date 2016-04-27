@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
+import tornado.ioloop
+import tornado.web
+
+from config import PORT, DEBUG, HOST
+import _url  # noqa
+from misc._route import route
+
+
+def make_app():
+    return tornado.web.Application(route.url_list, debug=DEBUG)
+
+if __name__ == "__main__":
+    app = make_app()
+    app.listen(PORT)
+
+    print 'Listening at {host}:{port}'.format(host=HOST, port=PORT)
+    tornado.ioloop.IOLoop.current().start()
