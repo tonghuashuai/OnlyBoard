@@ -8,7 +8,13 @@
       group: "list-view",
       animation: 150,
       ghostClass: "ghost",
-      chosenClass: "chosen"
+      chosenClass: "chosen",
+      onUpdate: function(event) {
+        return console.log(event);
+      },
+      onAdd: function(event) {
+        return console.log(event);
+      }
     });
   });
 

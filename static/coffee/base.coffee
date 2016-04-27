@@ -5,5 +5,11 @@ $('.list-view').each(->
         animation: 150
         ghostClass: "ghost"  #  Class name for the drop placeholder
         chosenClass: "chosen"  #  Class name for the chosen item
+
+        onUpdate: (event)->
+            console.log event
+
+        onAdd: (event)->
+            console.log event
     })
 )
