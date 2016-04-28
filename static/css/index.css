@@ -17,6 +17,10 @@
     margin-bottom: 12px;
 }
 
+.box .list-view .item:last-child{
+    margin-bottom: 0;
+}
+
 .ghost{
     opacity: 0.3;
 }
@@ -66,4 +70,28 @@
 
 .timeline .content .time{
     color: #ddd;
+}
+
+.addition{
+    padding: 12px 0;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0 0 3px 3px;
+    background: #fff;
+        transition: all 0.3s ease-out;
+   -moz-transition: all 0.3s ease-out;
+-webkit-transition: all 0.3s ease-out;
+     -o-transition: all 0.3s ease-out;   
+}
+
+.addition:hover{
+    background: rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-out;
+   -moz-transition: all 0.3s ease-out;
+-webkit-transition: all 0.3s ease-out;
+     -o-transition: all 0.3s ease-out;   
+}
+
+.addition .glyphicon{
+    float: none;
 }
