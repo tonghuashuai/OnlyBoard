@@ -19,17 +19,40 @@
   });
 
   $.app.controller('TaskCtrl', function($scope) {
-    return $scope.o = null;
+    return $scope.o = {
+      todo: null,
+      doing: null,
+      done: null
+    };
   });
 
   $.only_ajax({
-    url: "/j/task/list",
+    url: "/j/task/list?type=1",
     success: function(r) {
       var v;
       v = angular.element($("[ng-controller=TaskCtrl]")).scope();
-      v.o = r.data;
-      v.$apply();
-      return false;
+      v.o.todo = r.data;
+      return v.$apply();
+    }
+  });
+
+  $.only_ajax({
+    url: "/j/task/list?type=2",
+    success: function(r) {
+      var v;
+      v = angular.element($("[ng-controller=TaskCtrl]")).scope();
+      v.o.doing = r.data;
+      return v.$apply();
+    }
+  });
+
+  $.only_ajax({
+    url: "/j/task/list?type=3",
+    success: function(r) {
+      var v;
+      v = angular.element($("[ng-controller=TaskCtrl]")).scope();
+      v.o.done = r.data;
+      return v.$apply();
     }
   });
 

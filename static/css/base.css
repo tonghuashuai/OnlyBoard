@@ -43,37 +43,6 @@ a:hover{
     border: solid 1px #ddd;
 }
 
-.box .head{
-    font-size: 16px;
-    border-bottom: solid 1px #ddd;
-    background: rgba(0, 0, 0, 0.1);
-    padding: 12px;
-    border-radius: 4px 4px 0 0;
-    color: #333;
-}
-
-.box .list-view{
-    padding: 18px;
-}
-
-.box .list-view .item{
-    cursor: pointer;
-    padding: 12px;
-    margin-bottom: 12px;
-}
-
-.ghost{
-    opacity: 0.3;
-}
-
-.chosen{
-    background-color: #eee;
-    border: solid 1px #aaa;
-}
-
-.glyphicon{
-    float: right;
-}
 
 /********* animation *******/
 @keyframes fadein {
