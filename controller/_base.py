@@ -5,8 +5,10 @@ import os
 import mako.lookup
 import mako.template
 import tornado.web
+from tornado.escape import json_encode
 
 from config import STATIC_HOST, APP
+from model.user import User
 
 
 class Base(tornado.web.RequestHandler):
@@ -35,7 +37,8 @@ class Base(tornado.web.RequestHandler):
         self.finish(self.render_string(filename, **kwargs))
 
     def get_current_user(self):
-        pass
+        j = self.get_secure_cookie("user")
+        return User.from_dict(j)
 
     def load_js(self, src):
         return '{static_host}/js/{src}'.format(static_host=STATIC_HOST, src=src)
@@ -55,3 +58,12 @@ class Base(tornado.web.RequestHandler):
                     underline_format += _s_ if _s_.islower() else '_' + _s_.lower()
 
         return underline_format
+
+
+class JsonBase(tornado.web.RequestHandler):
+    def finish(self, data):
+        if not isinstance(data, str):
+            data = json_encode(data)
+
+        self.set_header('Content-Type', 'application/json; charset=UTF-8')
+        super(JsonBase, self).finish(data)
