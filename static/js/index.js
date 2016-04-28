@@ -9,6 +9,7 @@
       animation: 150,
       ghostClass: "ghost",
       chosenClass: "chosen",
+      filter: ".undrag",
       onUpdate: function(event) {
         return console.log(event);
       },

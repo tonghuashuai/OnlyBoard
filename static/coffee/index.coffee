@@ -5,6 +5,7 @@ $('.list-view').each(->
         animation: 150
         ghostClass: "ghost"  #  Class name for the drop placeholder
         chosenClass: "chosen"  #  Class name for the chosen item
+        filter: ".undrag"
 
         onUpdate: (event)->
             console.log event
@@ -47,3 +48,5 @@ $.only_ajax({
         v.o.done = r.data
         v.$apply()
 })
+
+

@@ -29,7 +29,13 @@ a:hover{
 }
 
 .fn-t-align-c{
-    text-align: center
+    text-align: center;
+}
+.fn-t-align-l{
+    text-align: left;
+}
+.fn-t-align-r{
+    text-align: right;
 }
 
 .fn-clear-f{
