@@ -1,15 +1,13 @@
-$('.list-view').each(->
-    id = $(this).attr('id')
-    Sortable.create(document.getElementById(id), {
-        group: "list-view"
-        animation: 150
-        ghostClass: "ghost"  #  Class name for the drop placeholder
-        chosenClass: "chosen"  #  Class name for the chosen item
+$.extend({
+    app: angular.module('app', ['ngRoute'])
+    only_ajax: (option)->
+        $.ajax({
+            method: option.method,
+            url: option.url,
+            success: (r)->
+                option.success(r)
 
-        onUpdate: (event)->
-            console.log event
-
-        onAdd: (event)->
-            console.log event
-    })
-)
+            fail: ->
+                foption.ail()
+        })
+})

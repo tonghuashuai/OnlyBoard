@@ -13,9 +13,9 @@ class Base(Model):
     def to_dict(self):
         return model_to_dict(self)
 
-    def from_dict(self, d):
-        cls = self.__class__
-        return dict_to_model(cls, d)
+    @classmethod
+    def from_dict(cls, d):
+        return dict_to_model(cls, d) if d else None
 
     class Meta:
         database = db

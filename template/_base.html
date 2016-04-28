@@ -12,13 +12,17 @@
         </%block>
     </head>
     <body>
-        ${next.body()}
+        <div ng-app="app">
+            ${next.body()}
 
-        <script src="${load_js('jquery-2.2.3.min.js')}"></script>
-        <script src="${load_js('sortable.js')}"></script>
-        <script src="${load_js('bootstrap-3.3.5-dist/bootstrap.min.js')}"></script>
-        <script src="${load_js('base.js')}"></script>
-        <%block name="js">
-        </%block>
+            <script src="${load_js('jquery-2.2.3.min.js')}"></script>
+            <script src="${load_js('angular.min.js')}"></script>
+            <script src="${load_js('angular-route.js')}"></script>
+            <script src="${load_js('sortable.js')}"></script>
+            <script src="${load_js('bootstrap-3.3.5-dist/bootstrap.min.js')}"></script>
+            <script src="${load_js('base.js')}"></script>
+            <%block name="js">
+            </%block>
+        </div>
     </body>
 </html>

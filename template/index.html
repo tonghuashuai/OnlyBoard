@@ -1,25 +1,20 @@
 <%inherit file="_base.html"/>
-<div class="row">
+<%block name="css">
+    <link rel="stylesheet" href="${load_css('base.css')}">
+</%block>
+<div class="row" ng-controller="TaskCtrl">
     <div class="col-md-4">
         <div class="box">
             <div class="head">
                 TODO
             </div>
             <div class="list-view" id="todo">
-                <div class="item list-group-item">
+                <div class="item list-group-item" ng-repeat="x in o">
                     <input type='checkbox'>
-                    今天上午1
+                    {{x.title}}
                     <a href="javascript: alert(1); void(0);">
                         <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
                     </a>
-                </div>
-                <div class="item list-group-item">
-                    <input type='checkbox'>
-                    今天上午2
-                </div>
-                <div class="item list-group-item">
-                    <input type='checkbox'>
-                    今天上午3
                 </div>
             </div>
         </div>
@@ -59,3 +54,7 @@
         </div>
     </div>
 </div>
+
+<%block name="js">
+    <script src="${load_js('index.js')}"></script>
+</%block>
