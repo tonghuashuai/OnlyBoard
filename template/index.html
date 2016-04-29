@@ -19,15 +19,15 @@
                             </a>
                         </div>
                     </div>
-                    <div class="item">
-                        <textarea></textarea>
+                    <div class="item" ng-if="edit">
+                        <textarea id="text-1" autofocus ng-model="todo.title"></textarea>
                         <div class="fn-t-align-r">
-                            <button type="button" class="btn btn-primary">确定</button>
+                            <button type="button" class="btn btn-primary" ng-click="add()">确定</button>
                             &nbsp;
-                            <button type="button" class="btn btn-default">取消</button>
+                            <button type="button" class="btn btn-default" ng-click="cancel_add(1)">取消</button>
                         </div>
                     </div>
-                    <div class="addition">
+                    <div class="addition" ng-click="insert(1)">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </div>
                 </div>

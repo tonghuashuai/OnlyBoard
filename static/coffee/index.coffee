@@ -22,6 +22,25 @@ $.app.controller('TaskCtrl', ($scope)->
         doing: null
         done: null
     }
+    $scope.todo = {
+        title: ''
+    }
+
+    $scope.edit = false
+
+    $scope.insert = (type)->
+        $scope.edit = true
+        setTimeout(->
+            $("#text-#{type}").focus()
+        , 100)
+        false
+    
+    $scope.cancel_add = (type)->
+        $scope.edit = false
+
+    $scope.add = ()->
+        console.log $scope.todo.title
+
 )
 
 

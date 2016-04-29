@@ -20,10 +20,27 @@
   });
 
   $.app.controller('TaskCtrl', function($scope) {
-    return $scope.o = {
+    $scope.o = {
       todo: null,
       doing: null,
       done: null
+    };
+    $scope.todo = {
+      title: ''
+    };
+    $scope.edit = false;
+    $scope.insert = function(type) {
+      $scope.edit = true;
+      setTimeout(function() {
+        return $("#text-" + type).focus();
+      }, 100);
+      return false;
+    };
+    $scope.cancel_add = function(type) {
+      return $scope.edit = false;
+    };
+    return $scope.add = function() {
+      return console.log($scope.todo.title);
     };
   });
 
