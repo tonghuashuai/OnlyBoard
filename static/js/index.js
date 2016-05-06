@@ -26,7 +26,8 @@
       done: null
     };
     $scope.todo = {
-      title: ''
+      title: '',
+      type: 1
     };
     $scope.edit = false;
     $scope.insert = function(type) {
@@ -40,7 +41,23 @@
       return $scope.edit = false;
     };
     return $scope.add = function() {
-      return console.log($scope.todo.title);
+      $.only_ajax({
+        method: 'POST',
+        url: '/j/task',
+        data: $scope.todo,
+        success: function() {
+          return $.only_ajax({
+            url: "/j/task/list?type=1",
+            success: function(r) {
+              var v;
+              v = angular.element($("[ng-controller=TaskCtrl]")).scope();
+              v.o.todo = r.data;
+              return v.$apply();
+            }
+          });
+        }
+      });
+      return false;
     };
   });
 

@@ -86,6 +86,7 @@
 }
 
 .addition{
+    color: #aaa;
     padding: 12px 0;
     text-align: center;
     cursor: pointer;
@@ -108,4 +109,9 @@
 
 .addition .glyphicon{
     float: none;
+}
+
+.item .dropdown.menu{
+    float: right;
+    margin-top: 3px;
 }

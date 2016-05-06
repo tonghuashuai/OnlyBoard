@@ -61,9 +61,10 @@ class Base(tornado.web.RequestHandler):
 
 
 class JsonBase(tornado.web.RequestHandler):
-    def finish(self, data):
-        if not isinstance(data, str):
-            data = json_encode(data)
+    def finish(self, data=None):
+        if data:
+            if not isinstance(data, str):
+                data = json_encode(data)
 
-        self.set_header('Content-Type', 'application/json; charset=UTF-8')
+            self.set_header('Content-Type', 'application/json; charset=UTF-8')
         super(JsonBase, self).finish(data)

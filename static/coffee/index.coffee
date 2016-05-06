@@ -24,6 +24,7 @@ $.app.controller('TaskCtrl', ($scope)->
     }
     $scope.todo = {
         title: ''
+        type: 1
     }
 
     $scope.edit = false
@@ -39,7 +40,22 @@ $.app.controller('TaskCtrl', ($scope)->
         $scope.edit = false
 
     $scope.add = ()->
-        console.log $scope.todo.title
+        $.only_ajax({
+            method: 'POST'
+            url: '/j/task'
+            data: $scope.todo
+            success: ->
+                $.only_ajax({
+                    url: "/j/task/list?type=1",
+                    success: (r)->
+                        v = angular.element($("[ng-controller=TaskCtrl]")).scope()
+                        v.o.todo = r.data
+                        v.$apply()
+                })
+
+        })
+
+        false
 
 )
 

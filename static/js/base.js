@@ -7,6 +7,7 @@
       return $.ajax({
         method: option.method,
         url: option.url,
+        data: option.data,
         success: function(r) {
           return option.success(r);
         },

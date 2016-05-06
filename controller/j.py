@@ -15,3 +15,13 @@ class TaskList(JsonBase):
         li = [o.to_dict() for o in li]
 
         self.finish(dict(data=li))
+
+
+@route('/j/task')
+class Task_(JsonBase):
+    def post(self):
+        type_ = self.get_argument('type')
+        title = self.get_argument('title')
+        Task.create(type=type_, title=title)
+
+        self.finish()

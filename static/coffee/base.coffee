@@ -4,6 +4,7 @@ $.extend({
         $.ajax({
             method: option.method,
             url: option.url,
+            data: option.data,
             success: (r)->
                 option.success(r)
 
